@@ -1,0 +1,27 @@
+<app-header></app-header>
+
+<div class="container">
+  <h1>Ananda</h1>
+  <br><br>
+  <button type="button" class="btn btn-primary" (click)="nuevoProducto()">Agregar Nuevo Producto</button>
+  <br><br>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Numero de Producto</th>
+        <th scope="col">Nombre del Producto</th>
+        <th scope="col">Codigo del SAT</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let producto of productos">
+        <td>{{producto.itemName}}</td>
+        <td>{{producto.itemCode}}</td>
+        <td>{{producto.ncmCode}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<app-footer></app-footer>
