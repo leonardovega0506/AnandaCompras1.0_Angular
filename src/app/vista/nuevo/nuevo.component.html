@@ -1,28 +1,454 @@
 <app-header></app-header>
 <div class="container">
-    <form [formGroup]="nuevoForm" (ngSubmit)="postForm(nuevoForm.value)">
-        <div class="form-row">
-          <div class="form-group col-md-4">
-            <label for="nombre">Numero de Item</label>
-            <input type="text" class="form-control" id="itemCode" placeholder="Numero del Codigo" formControlName="itemCode">
+  <form [formGroup]="nuevoForm" (ngSubmit)="postForm(nuevoForm.value)">
+    <div class="border border-dark rounded" style="padding: 20px;">
+      <div class="row">
+        <div class="form-group col-md-2">
+          <label for="itemCode">Numero de Item</label>
+          <input type="text" class="form-control" id="itemCode" placeholder="Numero del Codigo"
+            formControlName="itemCode">
+        </div>
+        <div class="form-group col-md-4">
+          <label for="itemName">Nombre de Item</label>
+          <input type="text" class="form-control" id="itemName" placeholder="Nombre del Producto"
+            formControlName="itemName">
+        </div>
+        <div class="form-group col-md-2">
+          <label for="ncmCode">Codigo del SAT</label>
+          <input type="text" class="form-control col-md-2" id="ncmCode" placeholder="Codigo del SAT"
+            formControlName="ncmCode">
+        </div>
+        <div class="form-group col-md-2">
+          <label for="direccion">Sujeto a Impuesto</label>
+          <input type="text" class="form-control col-md-2" id="vatLiable" placeholder="Sujeto a Impuesto"
+            formControlName="vatLiable">
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="form-group col-md-2">
+          <label for="taxType">Clase de Impuesto</label>
+          <input type="text" class="form-control col-md-2" id="taxType" placeholder="Clase de Impuesto"
+            formControlName="taxType">
+        </div>
+        <div class="form-group col-md-2">
+          <label for="itemType">Clase de Articulo</label>
+          <input type="text" class="form-control col-md-2" id="itemType" placeholder="Clase de Articulo"
+            formControlName="itemType">
+        </div>
+        <div class="form-group col-md-4">
+          <label for="cardCode">Proveedor</label>
+          <input type="text" class="form-control" id="cardCode" placeholder="Proveedor" formControlName="cardCode">
+        </div>
+        <div class="form-group col-md-2">
+          <label for="itemsGrpCode">Grupo de Articulo</label>
+          <input type="text" class="form-control col-md-2" id="itemsGrpCode" placeholder="Grupo de Articulos"
+            formControlName="itemsGrpCode">
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="form-group col-md-2">
+          <label for="sVolume">Volumen Venta</label>
+          <input type="text" class="form-control col-md-2" id="sVolume" placeholder="Volumen Venta"
+            formControlName="sVolume">
+        </div>
+        <div class="form-group col-md-2">
+          <label for="sWeight1">Peso Venta</label>
+          <input type="text" class="form-control col-md-2" id="sWeight1" placeholder="Peso Venta"
+            formControlName="sWeight11">
+        </div>
+        <div class="form-group col-md-4">
+          <label for="sWght1Unit">Peso 1: Unidad de medidas de venta</label>
+          <input type="text" class="form-control col-md-2" id="sWght1Unit" placeholder="Unidad de medidas de venta"
+            formControlName="sWght1Unit">
+        </div>
+        <div class="form-group col-md-2">
+          <label for="iWeight1">Peso 1: Inventario</label>
+          <input type="text" class="form-control col-md-2" id="iWeight1" placeholder="Peso 1: Inventario"
+            formControlName="iWeight1">
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="form-group col-md-2">
+          <label for="numInSale">Cantidad de artículos por unidad de medida</label>
+          <input type="text" class="form-control col-md-2" id="numInSale" placeholder="Cantidad de articulos"
+            formControlName="numInSale">
+        </div>
+        <div class="form-group col-md-2">
+          <br>
+          <label for="planingSys">Método de planificación</label>
+          <input type="text" class="form-control col-md-2" id="planingSys" placeholder="Metodo"
+            formControlName="planingSys">
+        </div>
+        <div class="form-group col-md-4">
+          <br>
+          <label for="prcrmntMtd">Método aprovisonamiento</label>
+          <input type="text" class="form-control col-md-2" id="prcrmntMtd" placeholder="Metodo"
+            formControlName="prcrmntMtd">
+        </div>
+        <div class="form-group col-md-2">
+          <br>
+          <label for="codeBars">Codigo de Barras</label>
+          <input type="text" class="form-control col-md-2" id="codeBars" placeholder="Codigo de Barras"
+            formControlName="codeBars">
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-md-2">
+          <br>
+          <label for="uClasifStore">Clasificacion Store</label>
+          <input type="text" class="form-control col-md-2" id="uClasifStore" placeholder="Clasificacion"
+            formControlName="uClasifStore">
+        </div>
+        <div class="form-group col-md-4">
+          <br>
+          <label for="uCode">Nombre</label>
+          <input type="text" class="form-control col-md-2" id="uCode" placeholder="Nombre"
+            formControlName="uCode">
+        </div>
+        <div class="form-group col-md-2">
+          <label for="salUnitMsr">Unidad de Medida de Ventas</label>
+          <input type="text" class="form-control col-md-2" id="salUnitMsr" placeholder="Unidad de medida"
+            formControlName="salUnitMsr">
+        </div>
+        <div class="form-group col-md-2">
+          <label for="salPackUn">Cantidad por Empaque( ventas )</label>
+          <input type="text" class="form-control col-md-2" id="salPackUn" placeholder="Cantidad por Empaque V"
+            formControlName="salPackUn">
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="form-group col-md-2">
+          <label for="invntryUom">Unidad de Medida de Inventario</label>
+          <input type="text" class="form-control col-md-2" id="invntryUom"  placeholder="Unidad de medida"
+            formControlName="invntryUom">
+        </div>
+        <div class="form-group col-md-2">
+          <br>
+          <label for="buyUnitMsr">Unidad Compra</label>
+          <input type="text" class="form-control col-md-2" id="buyUnitMsr" placeholder="Unidad Compra"
+            formControlName="buyUnitMsr">
+        </div>
+        <div class="form-group col-md-2">
+          <br>
+          <label for="purPackMsr">Paquete Compra</label>
+          <input type="text" class="form-control col-md-2" id="purPackMsr" placeholder="Inner"
+            formControlName="purPackMsr">
+        </div>
+        <div class="form-group col-md-2">
+          <br>
+          <label for="salPackMsr">Paquete Venta</label>
+          <input type="text" class="form-control col-md-2" id="salPackMsr" placeholder="Inner"
+            formControlName="salPackMsr">
+        </div>
+        <div class="form-group col-md-2">
+          <br>
+          <label for="sww">Codigo Adicional</label>
+          <input type="text" class="form-control col-md-2" id="sww" placeholder="Codigo"
+            formControlName="sww">
+        </div>
+      </div>
+    </div> 
+    <br>
+      <div class="border border-dark rounded " style="padding-left:80px;padding-right: 80px;">
+        <div class="row">
+          <div class="form-group col-md-2">
+            <label for="direccion">Linea</label>&nbsp;
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
           </div>
-          <div class="form-group col-md-4">
-            <label for="apellido">Nombre de Item</label>
-            <input type="text" class="form-control" id="itemName" placeholder="Nombre del Producto" formControlName="itemName">
+          <div class="form-group col-md-2">
+            <label for="direccion">Mixto</label>&nbsp;
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          </div>
+          <div class="form-group col-md-2">
+            <label for="direccion">Casa</label>&nbsp;
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          </div>
+          <div class="form-group col-md-2">
+            <label for="direccion">Productos Nuevos</label>&nbsp;
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          </div>
+          <div class="form-group col-md-2">
+            <label for="direccion">L.A. Color</label>&nbsp;
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          </div>
+          <div class="form-group col-md-2">
+            <label for="direccion">Ruby Rose</label>&nbsp;
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
           </div>
         </div>
-        <div class="form-group c">
-          <label for="direccion">Codigo del SAT</label>
-          <input type="text" class="form-control" id="ncmCode" placeholder="Codigo del SAT" formControlName="ncmCode">
+        <br>
+        <div class="row">
+          <div class="form-group col-md-2">
+            <label for="direccion">IM Natural</label>&nbsp;
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          </div>
+          <div class="form-group col-md-2">
+            <label for="direccion">Curtis</label>&nbsp;
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          </div>
+          <div class="form-group col-md-2">
+            <label for="direccion">Moda</label>&nbsp;
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          </div>
+          <div class="form-group col-md-2">
+            <label for="direccion">Temporada</label>&nbsp;
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          </div>
+          <div class="form-group col-md-2">
+            <label for="direccion">Arete y Piercing</label>&nbsp;
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          </div>
+          <div class="form-group col-md-2">
+            <label for="direccion">Anillo y Pulsera</label>&nbsp;
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          </div>
         </div>
-        <div>
-            <br>
-            <br>
-            <button type="submit" class="btn btn-primary">Guardar</button>
-           &nbsp; <button type="submit" class="btn btn-dark" (click)="salir()">Salir</button>
-            
+        <br>
+        <div class="row">
+          <div class="form-group col-2">
+            <label for="direccion">Collar</label>&nbsp;
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          </div>
+          <div class="form-group col-2">
+            <label for="direccion">Cabello by Apple</label>&nbsp;
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          </div>
+          <div class="form-group col-2" style="width: 200px;">
+            <label for="direccion">Accesorios by Apple</label>&nbsp;
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          </div>
+          <div class="form-group col-2">
+            <label for="direccion">Pesta&nacute;as by Apple</label>&nbsp;
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          </div>
+          <div class="form-group col-2" style="width: 200px;">
+            <label for="direccion">Aplicadores by Apple</label>&nbsp;
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          </div>
         </div>
-
-      </form>
+        <br>
+        <div class="row">
+          <div class="form-group col">
+            <label for="direccion">Depiladores Apple</label>&nbsp;
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          </div>
+          <div class="form-group col-sm-2">
+            <label for="direccion">Lapiz AND</label>&nbsp;
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          </div>
+          <div class="form-group col-md-auto">
+            <label for="direccion">Cosmetico MEGALINE</label>&nbsp;
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          </div>
+          <div class="form-group col-2">
+            <label for="direccion">Donas y Valerinas</label>&nbsp;
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          </div>
+          <div class="form-group col-2">
+            <label for="direccion">Broches,P y C</label>&nbsp;
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          </div>
+          <div class="form-group col-2">
+            <label for="direccion">Pinzas y Diademas</label>&nbsp;
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="form-group col-2">
+            <label for="direccion">Ligas y Coletero</label>&nbsp;
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          </div>
+          <div class="form-group col-md-2">
+            <label for="direccion">Naturone</label>&nbsp;
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          </div>
+          <div class="form-group col-md-2">
+            <label for="direccion">Prosa 4 en 1</label>&nbsp;
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          </div>
+          <div class="form-group col-md-2">
+            <label for="direccion">Postizas</label>&nbsp;
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          </div>
+          <div class="form-group col-md-2">
+            <label for="direccion">Hogar</label>&nbsp;
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          </div>
+          <div class="form-group col-md-2">
+            <label for="direccion">Cocina</label>&nbsp;
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="form-group col-md-2">
+            <label for="direccion">Juguetes</label>&nbsp;
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          </div>
+          <div class="form-group col-md-2">
+            <label for="direccion">Escritura</label>&nbsp;
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          </div>
+          <div class="form-group col-md-2">
+            <label for="direccion">Corta y Pega</label>&nbsp;
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          </div>
+          <div class="form-group col-md-auto">
+            <label for="direccion">Postizas</label>&nbsp;
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          </div>
+          <div class="form-group col-md-auto">
+            <label for="direccion">Empaques de Regalo</label>&nbsp;
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          </div>
+          <div class="form-group col-md-2">
+            <label for="direccion">Complementos</label>&nbsp;
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="form-group col-md-2">
+            <label for="direccion">ULTRANO</label>&nbsp;
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          </div>
+          <div class="form-group col-md-2">
+            <label for="direccion">Remate</label>&nbsp;
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          </div>
+          <div class="form-group col-md-2">
+            <label for="direccion">Importación</label>&nbsp;
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          </div>
+          <div class="form-group col-md-auto">
+            <label for="direccion">Temporada Septiembre</label>&nbsp;
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          </div>
+          <div class="form-group col-md-auto">
+            <label for="direccion">Temporada Halloween</label>&nbsp;
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="form-group col-md-2">
+            <label for="direccion">Temporada Navidad</label>&nbsp;
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          </div>
+          <div class="form-group col-md-2">
+            <label for="direccion">Fiesta</label>&nbsp;
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          </div>
+          <div class="form-group col-md-2">
+            <label for="direccion">Caja Cerrada</label>&nbsp;
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          </div>
+          <div class="form-group col-md-2">
+            <label for="direccion">U&nacute;as</label>&nbsp;
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          </div>
+          <div class="form-group col-md-auto">
+            <label for="direccion">Accesorios MEGALINE</label>&nbsp;
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          </div>
+          <div class="form-group col-md-auto">
+            <label for="direccion">Accesorios AND</label>&nbsp;
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="form-group col-md-auto">
+            <label for="direccion">Cabello AND</label>&nbsp;
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          </div>
+          <div class="form-group col-md-2">
+            <label for="direccion">Pestañas AND</label>&nbsp;
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          </div>
+          <div class="form-group col-md-2">
+            <label for="direccion">Depiladores AND</label>&nbsp;
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          </div>
+          <div class="form-group col-md-2">
+            <label for="direccion">Aplicadores AND</label>&nbsp;
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          </div>
+          <div class="form-group col-md-2">
+            <label for="direccion">Hebble Cosmetics</label>&nbsp;
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          </div>
+          <div class="form-group col-md-2">
+            <label for="direccion">Marcas</label>&nbsp;
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="form-group col-md-2">
+            <label for="direccion">Rostro</label>&nbsp;
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          </div>
+          <div class="form-group col-md-2">
+            <label for="direccion">Ojos</label>&nbsp;
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          </div>
+          <div class="form-group col-md-2">
+            <label for="direccion">Labios</label>&nbsp;
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          </div>
+          <div class="form-group col-md-2">
+            <label for="direccion">Cuidado de la piel</label>&nbsp;
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          </div>
+          <div class="form-group col-md-auto">
+            <label for="direccion">Accesorios de Belleza</label>&nbsp;
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          </div>
+          <div class="form-group col-md-auto">
+            <label for="direccion">Bissú</label>&nbsp;
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="form-group col-md-2">
+            <label for="direccion">By Apple</label>&nbsp;
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          </div>
+          <div class="form-group col-md-auto">
+            <label for="direccion">Maravilla</label>&nbsp;
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          </div>
+          <div class="form-group col-md-2">
+            <label for="direccion">Saniye</label>&nbsp;
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          </div>
+          <div class="form-group col-md-2">
+            <label for="direccion">Pink 21</label>&nbsp;
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          </div>
+          <div class="form-group col-md-2">
+            <label for="direccion">Amor Us</label>&nbsp;
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          </div>
+          <div class="form-group col-md-2">
+            <label for="direccion">Dazon Cosmetics</label> &nbsp;
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          </div>
+        </div>
+      </div> 
+    <div>
+      <br>
+      <br>
+      <button type="submit" class="btn btn-primary">Guardar</button>
+      &nbsp; <button type="submit" class="btn btn-dark" (click)="salir()">Salir</button>
+    </div>
+  </form>
+  <br><br>
 </div>
-<app-footer></app-footer>

@@ -19,7 +19,7 @@ export class AnandapiService {
     return this.http.post<ResponseI>(uri,form);
   }
   getProducts():Observable<ListaProductosI[]>{
-    let uri = this.url+"items";
+    let uri = this.url+"item";
     return this.http.get<ListaProductosI[]>(uri);
   }
   postProducts(form:ProductoI){

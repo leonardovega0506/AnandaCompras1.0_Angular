@@ -8,16 +8,30 @@
   <table class="table">
     <thead class="thead-dark">
       <tr>
-        <th scope="col">Numero de Producto</th>
-        <th scope="col">Nombre del Producto</th>
+        <th scope="col">Numero de Articulo</th>
+        <th scope="col">Descripcion del Articulo</th>
         <th scope="col">Codigo del SAT</th>
+        <th scope="col">Clase de Articulo</th>
+        <th scope="col">Proveedor Predeterminado</th>
+        <th scope="col">Clasificacion</th>
+        <th scope="col">Grupo de Articulos</th>
+        <th scope="col">Paquete de Compra </th>
+        <th scope="col">Paquete de Venta</th>
+        <th scope="col">Volumen de Venta</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let producto of productos">
-        <td>{{producto.itemName}}</td>
         <td>{{producto.itemCode}}</td>
+        <td>{{producto.itemName}}</td>
         <td>{{producto.ncmCode}}</td>
+        <td>{{producto.itemType}}</td>
+        <td>{{producto.cardCode}}</td>
+        <td>{{producto.uClasifStore}}</td>
+        <td>{{producto.itemsGrpCode}}</td>
+        <td>{{producto.purPackMsr}}</td>
+        <td>{{producto.salPackMsr}}</td>
+        <td>{{producto.sVolume}}</td> 
       </tr>
     </tbody>
   </table>
