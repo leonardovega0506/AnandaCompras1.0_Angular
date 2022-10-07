@@ -23,7 +23,7 @@ export class AnandapiService {
     return this.http.get<ListaProductosI[]>(uri);
   }
   postProducts(form:ProductoI){
-    let uri = this.url+"items";
+    let uri = this.url+"item";
     return this.http.post<ResponseI>(uri,form);
   }
 }

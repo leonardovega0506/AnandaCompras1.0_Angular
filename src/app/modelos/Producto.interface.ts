@@ -1,8 +1,9 @@
 export interface ProductoI{
-        itemame: string;
-        vatLiable : string;
-        taxType: string;
-        itemType: string;
+        itemName: string;
+        vatLiable :boolean;
+        taxType: boolean;
+        itemType: boolean;
+        taxVariable:boolean;
         cardCode: string;
         ncmCode: string;
         itemsGrpCode: string;
@@ -35,7 +36,8 @@ export interface ProductoI{
         cat_Temporada: boolean;
         cat_AretesP: boolean;
         cat_AnilloP: boolean;
-        cat_Colar: boolean;
+        cat_Collar: boolean;
+        cat_CabelloApple:boolean;
         cat_AccesoriosApple: boolean;
         cat_PestanasAple:boolean;
         cat_AplicadoresApple: boolean;
